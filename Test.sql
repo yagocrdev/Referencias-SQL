@@ -9,23 +9,34 @@ CREATE TABLE alunos (
     curso VARCHAR(50)
 );
 
-    INSERT INTO alunos (nome, idade, curso)
-    VALUES
-    ('Maria', 20, 'Matemática'),
-    ('João', 22, 'História'),
-    ('Ana', 19, 'Computação');
+INSERT INTO alunos
+    ( nome, idade, curso )
+VALUES
+    ( 'Maria', 20, 'Matemática' ),
+    ( 'João', 22, 'História' ),
+    ( 'Ana', 19, 'Computação' );
 
-    SELECT * FROM alunos; -- Todos os dados
-    SELECT nome, curso FROM alunos; -- Somente nome e curso
-    SELECT * FROM alunos WHERE idade > 20; -- Cond
+-- SELECIONA TUDO DA TABELA alunos
+SELECT  *
+FROM    alunos;
 
-    UPDATE alunos
-    SET curso = 'Engenharia'
-    WHERE nome = 'Ana';
+-- SELECIONA COLUNAS nome, curso DA TABELA alunos
+SELECT  nome, curso
+FROM    alunos;
 
-    DELETE FROM alunos
-    WHERE id = 2;
+-- SELECIONA TUDO DA TABELA ALUNOS DESDE QUE idade SEJA MAIOR (>) QUE 20
+SELECT  *
+FROM    alunos
+WHERE   idade > 20;
 
-    DROP TABLE alunos;
-    DROP DATABASE escola; ( excluir obanco de dados)
-    
+-- ATUALIZA A COLUNA curso DA TABELA alunos ONDE O NOME SEJA IGUAL A 'Ana'
+UPDATE  alunos
+SET     curso = 'Engenharia'
+WHERE   nome = 'Ana';
+
+DELETE
+FROM    alunos
+WHERE   id = 2;
+
+DROP TABLE alunos;
+DROP DATABASE escola; ( excluir obanco de dados)
